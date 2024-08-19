@@ -1,0 +1,21 @@
+# Use the openjdk:11-jre-slim base image
+FROM openjdk:11-jre-slim
+
+# Install necessary tools
+RUN apt-get update && apt-get install -y wget unzip
+
+# Install Allure CLI
+RUN wget -qO- https://github.com/allure-framework/allure2/releases/download/2.18.1/allure-2.18.1.zip -O /tmp/allure.zip && \
+    unzip /tmp/allure.zip -d /opt/ && \
+    rm /tmp/allure.zip && \
+    ln -s /opt/allure-2.18.1/bin/allure /usr/bin/allure
+
+# Set the working directory
+WORKDIR /tests
+
+# Copy the start script and make it executable
+COPY start.sh /tests/start.sh
+RUN chmod +x /tests/start.sh
+
+# Use the start script as the entry point
+ENTRYPOINT ["/tests/start.sh"]

@@ -1,0 +1,12 @@
+[submodule "horizon-ui-chakra"]
+	path = horizon-ui-chakra
+	url = https://github.com/AnjiB/horizon-ui-chakra
+[submodule "playwright-ui-test-framework"]
+	path = playwright-ui-test-framework
+	url = https://github.com/AnjiB/playwright-ui-test-framework
+[submodule "react-app/horizon-ui-chakra"]
+	path = react-app/horizon-ui-chakra
+	url = https://github.com/AnjiB/horizon-ui-chakra
+[submodule "test-project/playwright-ui-test-framework"]
+	path = test-project/playwright-ui-test-framework
+	url = https://github.com/AnjiB/playwright-ui-test-framework

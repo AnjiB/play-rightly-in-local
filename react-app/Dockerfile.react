@@ -1,0 +1,23 @@
+# Use Node.js 16.20.2 as the base image
+FROM node:16.20.2
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the package.json and package-lock.json (or yarn.lock) from the react-app directory
+COPY horizon-ui-chakra/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the React app source code from the react-app directory
+COPY horizon-ui-chakra/ .
+
+# Build the React app
+RUN npm run build
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Command to start the React app
+CMD ["npm", "start"]

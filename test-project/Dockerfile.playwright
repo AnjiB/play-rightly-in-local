@@ -1,0 +1,23 @@
+# Use the official Playwright image as the base
+FROM mcr.microsoft.com/playwright:v1.46.0-jammy
+
+WORKDIR /tests
+
+# Copy the Playwright tests and configuration
+COPY playwright-ui-test-framework/ .
+
+RUN ls
+
+RUN npm install
+
+RUN ls
+
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+# Expose the directory for Allure results
+VOLUME /tests/allure-results
+
+# Run Playwright tests
+CMD ["/entrypoint.sh"]
