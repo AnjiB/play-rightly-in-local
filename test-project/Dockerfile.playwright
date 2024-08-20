@@ -6,11 +6,7 @@ WORKDIR /tests
 # Copy the Playwright tests and configuration
 COPY playwright-ui-test-framework/ .
 
-RUN ls
-
 RUN npm install
-
-RUN ls
 
 COPY entrypoint.sh /entrypoint.sh
 
