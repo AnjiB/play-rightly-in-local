@@ -22,36 +22,16 @@ services:
     depends_on:
       react-app:
         condition: service_healthy
+    ports:
+      - "${HOST_PORT:-8089}:8089"
     networks:
       - app-network
     environment:
       - PLAYWRIGHT_BASE_URL=http://react-app:3000
+      - ALLURE_PORT=8089
     volumes:
       - ./allure-results:/tests/allure-results
+      - ./logs:/tests/logs
   
-  allure-generator:
-    build: 
-      context: ./allure-generator
-      dockerfile: Dockerfile-allure
-    depends_on:
-      - playwright-tests
-    volumes:
-      - ./allure-results:/tests/allure-results  # Map host allure-results to container
-      - ./allure-report:/tests/allure-report  # Output report on the host
-    command: ["generate", "/tests/allure-results", "--clean", "-o", "/tests/allure-report"]
-    networks:
-      - app-network
-  
-  allure-server:
-    image: nginx:alpine
-    depends_on:
-      - allure-generator
-    volumes:
-      - ./allure-report:/usr/share/nginx/html:ro
-    ports:
-      - "8080:80"
-    networks:
-      - app-network
-
 networks:
   app-network:
