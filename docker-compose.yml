@@ -29,6 +29,7 @@ services:
     environment:
       - PLAYWRIGHT_BASE_URL=http://react-app:3000
       - ALLURE_PORT=8089
+      - BROWSER=${BROWSER:-chrome}
     volumes:
       - ./allure-results:/tests/allure-results
       - ./logs:/tests/logs
