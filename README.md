@@ -1,5 +1,5 @@
 
-# Test Environment: 
+# Test Environment
 
 To implement and run the automated tests for Horizon UI Dashboard, I have two options 
 
@@ -25,14 +25,14 @@ Hence Option (a) is chosen.
 
 NOTE: Please be noted that these steps will vary when running the tests inCI.
 
-## How to run tests in Local Machine:
+## How to run tests in Local Machine
 
-### Pre-requisites:
+### Pre-requisites
 
 * Install Docker Desktop (Version 4.6.2) and start it
 * Git is installed (Version 2.39.0)
 
-## Steps to Follow:
+## Steps to Follow
 
 * Clone the repository using below command
 
@@ -43,3 +43,5 @@ NOTE: Please be noted that these steps will vary when running the tests inCI.
 * Run the command ```docker-compose up```. This will bring the whole setup, start the development server on port 3000 (http://www.localhost:3000/), run the tests and bring the allure report on port 8089. 
 * If you want to change the port of the allure report & browser name, please update ```.env``` file and run
   ```docker-compose up``` command
+## clean up environment
+* Run the command ```docker-compose down```& run ```docker system prune -a``` to free up the space
