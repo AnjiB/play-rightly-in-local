@@ -41,5 +41,5 @@ NOTE: Please be noted that these steps will vary when running the tests inCI.
 
 * Cd into the folder ```play-rightly-in-local```
 * Run the command ```docker-compose up```. This will bring the whole setup, start the development server on port 3000 (http://www.localhost:3000/), run the tests and bring the allure report on port 8089. 
-* If you want to change the port of the allure report & browser name, please update .env file and run
+* If you want to change the port of the allure report & browser name, please update ```.env``` file and run
   ```docker-compose up``` command
