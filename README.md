@@ -43,5 +43,5 @@ NOTE: Please be noted that these steps will vary when running the tests inCI.
 * Run the command ```docker-compose up```. This will bring the whole setup, start the development server on port 3000 (http://www.localhost:3000/), run the tests and bring the allure report on port 8089. 
 * If you want to change the port of the allure report & browser name, please update ```.env``` file and run
   ```docker-compose up``` command
-## clean up environment
+## Clean up environment
 * Run the command ```docker-compose down```& run ```docker system prune -a``` to free up the space
