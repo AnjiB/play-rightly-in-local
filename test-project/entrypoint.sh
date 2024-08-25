@@ -5,6 +5,7 @@ RESULTS_DIR="/tests/allure-results"
 
 DEFAULT_PORT=8089
 PORT=${ALLURE_PORT:-$DEFAULT_PORT}
+BROWSER=${BROWSER:-chrome}
 
 # Check if the directory exists and delete it
 if [ -d "$RESULTS_DIR" ]; then
@@ -13,7 +14,7 @@ if [ -d "$RESULTS_DIR" ]; then
 fi
 
 # Run Playwright tests
-npm run test:chrome
+npm run test:$BROWSER
 
 echo "Playwright tests completed."
 
