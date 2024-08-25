@@ -6,6 +6,8 @@ WORKDIR /tests
 # Copy the Playwright tests and configuration
 COPY playwright-ui-test-framework/ .
 
+# Install Node.js dependencies
+RUN npm install
 
 # Install Allure Commandline and Java (OpenJDK 11)
 RUN npm install -g allure-commandline --save-dev && \
