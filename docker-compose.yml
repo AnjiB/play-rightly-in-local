@@ -27,12 +27,14 @@ services:
     networks:
       - app-network
     environment:
-      - PLAYWRIGHT_BASE_URL=http://react-app:3000
-      - ALLURE_PORT=8089
+      - PLAYWRIGHT_BASE_URL=${PLAYWRIGHT_BASE_URL}
+      - ALLURE_PORT=${ALLURE_PORT:-8089}
       - BROWSER=${BROWSER:-chrome}
     volumes:
       - ./allure-results:/tests/allure-results
       - ./logs:/tests/logs
+    env_file:
+      - .env
   
 networks:
   app-network:

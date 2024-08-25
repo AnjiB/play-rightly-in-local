@@ -36,7 +36,7 @@ NOTE: Please be noted that these steps will vary when running the tests inCI.
 
 * Clone the repository using below command
 
-   ``` Git clone https://github.com/AnjiB/play-rightly-in-local.git```
+   ```git clone --recurse-submodules https://github.com/AnjiB/play-rightly-in-local.git```
 
 
 * Cd into the folder ```play-rightly-in-local```
