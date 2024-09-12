@@ -17,7 +17,7 @@ RUN npm install -g allure-commandline --save-dev && \
 
 
 # Install specific browsers and devices
-RUN npx playwright install chrome firefox webkit
+RUN npx playwright install chromium firefox webkit
 
 # Set JAVA_HOME environment variable
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64

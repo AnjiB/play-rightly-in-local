@@ -29,7 +29,7 @@ services:
     environment:
       - PLAYWRIGHT_BASE_URL=${PLAYWRIGHT_BASE_URL}
       - ALLURE_PORT=${ALLURE_PORT:-8089}
-      - BROWSER=${BROWSER:-chrome}
+      - BROWSER=${BROWSER:-chromium}
     volumes:
       - ./allure-results:/tests/allure-results
       - ./logs:/tests/logs
